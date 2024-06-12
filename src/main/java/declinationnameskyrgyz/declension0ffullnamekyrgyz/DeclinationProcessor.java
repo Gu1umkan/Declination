@@ -5,22 +5,16 @@ import java.util.List;
 public class DeclinationProcessor {
 
     // атооч
-    public static String gcaseAtooch = "nominative";
     public static String gcaseNom = "nominative";
     // илик
-    public static String gcaseIlik = "genitive";
     public static String gcaseGen = "genitive";
     // барыш
-    public static String gcaseBarysh = "dative";
     public static String gcaseDat = "dative";
     // табыш
-    public static String gcaseTabysh = "accusative";
     public static String gcaseAcc = "accusative";
     // жатыш
-    public static String gcaseZhatysh = "instrumentative";
     public static String gcaseIns = "instrumentative";
     // чыгыш
-    public static String gcaseChygish = "prepositional";
     public static String gcasePos = "prepositional";
 
 
