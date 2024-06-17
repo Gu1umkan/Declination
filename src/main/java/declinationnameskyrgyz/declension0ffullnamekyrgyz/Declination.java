@@ -2,6 +2,8 @@ package declinationnameskyrgyz.declension0ffullnamekyrgyz;
 
 import java.util.List;
 
+import static declinationnameskyrgyz.declension0ffullnamekyrgyz.DeclinationProcessor.suffixOfOrdinalNumber;
+
 public class Declination {
 
     private String fullName;
@@ -33,7 +35,10 @@ public class Declination {
             return fullName + suffixes.get(3);
         } else if (declinationName.equals(DeclinationProcessor.gcasePos)) {
             return fullName + suffixes.getLast();
-        } else throw new IllegalArgumentException("Invalid declination name: " + declinationName);
+        } else if (declinationName.equals(DeclinationProcessor.gcaseOrdNuM)) {
+            return  suffixOfOrdinalNumber(fullName);
+        }
+        else throw new IllegalArgumentException("Invalid declination name: " + declinationName);
     }
 
 

@@ -16,6 +16,8 @@ public class DeclinationProcessor {
     public static String gcaseIns = "instrumentative";
     // чыгыш
     public static String gcasePos = "prepositional";
+    // иреттик сандар
+    public static String gcaseOrdNuM = "ordinal number";
 
 
     static List<String> suffixes = List.of("нын", "га", "ны", "да", "дан");
@@ -92,5 +94,36 @@ public class DeclinationProcessor {
         }
         throw new IllegalArgumentException("Unknown declination: " + secondLetter);
     }
+
+    public static String suffixOfOrdinalNumber(String number) {
+        String vowelRegex = ".*[аыүи]$";
+        String consonantRegex = ".*[птчксшцщбджгзмнңлрй]$";
+
+        if (number.matches(vowelRegex)) {
+            if (number.endsWith("ы") || number.endsWith("а")) {
+                return number + "нчы";
+            } else if (number.endsWith("и")) {
+                return number + "нчи";
+            } else if (number.endsWith("ү")) {
+                return number + "нчү";
+            }
+        } else if (number.matches(consonantRegex)) {
+            String num = number;
+            while (num.matches(".*[птчксшцщбджгзмнңлрй]$")) {
+                num = number.substring(0, number.length() - 1);
+            }
+            if (num.matches(".*[аяы]$")) {
+                return number + "ынчы";
+            } else if (num.matches(".*[еи]$")) {
+                return number + "инчи";
+            } else if (num.matches(".*[оу]$")) {
+                return number + "унчу";
+            } else if (num.matches(".*[үө]$")) {
+                return number + "үнчү";
+            }
+        }
+        throw new IllegalArgumentException("Unknown ordinal number: " + number);
+    }
+
 
 }

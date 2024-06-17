@@ -50,6 +50,7 @@ class Declension0fFullNameKyrgyzApplicationTests {
         assertEquals("Акылбекова Аселде", declination.getFullName(DeclinationProcessor.gcaseIns));
         assertEquals("Акылбекова Аселден", declination.getFullName(DeclinationProcessor.gcasePos));
     }
+
     @Test
     void testDeclinationWithSingleName() {
         Declination name = new Declination("Асан Степанё");
@@ -89,5 +90,11 @@ class Declension0fFullNameKyrgyzApplicationTests {
         assertEquals("Мирлан Керим уулуну", declination2.getFullName(DeclinationProcessor.gcaseAcc));
         assertEquals("Мирлан Керим уулунда", declination2.getFullName(DeclinationProcessor.gcaseIns));
         assertEquals("Мирлан Керим уулунан", declination2.getFullName(DeclinationProcessor.gcasePos));
+    }
+
+    @Test
+    void testOrdinalNumbers() {
+        Declination declination1 = new Declination("Жыйырма тогуз");
+        assertEquals("Жыйырма тогузунчу", declination1.getFullName(DeclinationProcessor.gcaseOrdNuM));
     }
 }
