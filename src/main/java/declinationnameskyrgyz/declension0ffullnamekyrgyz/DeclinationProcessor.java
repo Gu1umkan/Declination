@@ -35,10 +35,12 @@ public class DeclinationProcessor {
 
     static List<String> suffixes13 = List.of("нун", "на", "ну", "нда", "нан");
     static List<String> suffixes14 = List.of("нын", "на", "ны", "нда", "нан");
+    static List<String> suffixes18 = List.of("нүн", "нө", "нү", "ндө", "нөн");
 
     static List<String> suffixes15 = List.of("нун", "га", "ну", "да", "дан");
     static List<String> suffixes16 = List.of("дун", "га", "ду", "да", "дан");
     static List<String> suffixes17 = List.of("тун", "ка", "ту", "та", "тан");
+
 
     public static List<String> process(String endWith) {
         if ("аяы".equals(endWith)) {
@@ -67,8 +69,9 @@ public class DeclinationProcessor {
     }
 
     public static List<String> processEndWithUuluKyzy(String fullName) {
-        if (fullName.endsWith("кызы"))
+        if (fullName.endsWith("ы"))
             return suffixes14;
+        else if (fullName.endsWith("өкмөтү")) return suffixes18;
         else return suffixes13;
     }
 

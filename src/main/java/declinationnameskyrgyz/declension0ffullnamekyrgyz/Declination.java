@@ -6,7 +6,7 @@ public class Declination {
 
     private String fullName;
     private String endWith;
-    private static final String KYRGYZ_ALPHABET_REGEX = "^[АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнҢңОоӨөПпРрСсТтУуҮүФфХхЦцЧчШшЩщЫыЬьЭэЮюЯя ]+$";
+    private static final String KYRGYZ_ALPHABET_REGEX = "^[АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнҢңОоӨөПпРрСсТтУуҮүФфХхЦцЧчШшЩщЫыьЭэЮюЯя ]+$";
 
     public Declination(String fullName) {
         this.fullName = сheckName(fullName);
@@ -52,7 +52,7 @@ public class Declination {
     }
 
     public static boolean endsWithKyzUulu(String fullName) {
-        String[] suffixes = {"кызы", "уулу"};
+        String[] suffixes = {"кызы", "уулу","району","облусу","айылы","өкмөтү","аймагы","шаары"};
         for (String suffix : suffixes) {
             if (fullName.endsWith(suffix)) {
                 return true;
